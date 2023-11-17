@@ -11,12 +11,12 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="100" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="60" />
+            <RowDefinition Height="80" />
         </Grid.RowDefinitions>
-        <TextBlock Canvas.Top="10" Canvas.Left="20">Hello World!</TextBlock>        
+        <TextBlock Canvas.Top="10" Canvas.Left="20">Hello World!</TextBlock>
         <Grid Grid.Row="1">
             <StackPanel x:Name="st1" Orientation="Horizontal">
-                <Canvas HorizontalAlignment="Left" VerticalAlignment="Top">                    
+                <Canvas HorizontalAlignment="Left" VerticalAlignment="Top">
                     <Ellipse  x:Name="myEllipse" Width="80" Height="80" Canvas.Top="10" Canvas.Left="10" Fill="Silver" MouseDown="Ellipse_MouseDown">
                         <Ellipse.Style>
                             <Style TargetType="Ellipse">
@@ -29,7 +29,7 @@
                                 </Style.Triggers>
                             </Style>
                         </Ellipse.Style>
-                    </Ellipse>                    
+                    </Ellipse>
                     <Ellipse  x:Name="myEllipse1" Width="80" Height="80" Canvas.Top="10" Canvas.Left="90" Fill="Silver" MouseDown="Ellipse_MouseDown">
                         <Ellipse.Style>
                             <Style TargetType="Ellipse">
@@ -42,25 +42,33 @@
                                 </Style.Triggers>
                             </Style>
                         </Ellipse.Style>
-                    </Ellipse>                   
+                    </Ellipse>
                 </Canvas>
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="2" Margin="10,10,-10,50" Grid.RowSpan="2">
             <StackPanel x:Name="outerStackPanel" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             </StackPanel>
+            <CheckBox Content="CheckBox" Margin="10,10,938,565"/>
         </Grid>
         <Grid Grid.Row="3">
-            <StackPanel x:Name="st2">
-                <DataGrid x:Name="CustomerGrid" ItemsSource="{Binding}" AlternatingRowBackground="LightBlue" AlternationCount="5" AutoGenerateColumns="False" >
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="First Name" Width="80"/>
-                        <DataGridTextColumn Header="Last  Name" Width="80"/>
-                        <DataGridHyperlinkColumn Header="Email" Width="100"/>
-                        <DataGridCheckBoxColumn Header="Member?" Width="50"/>
-                        <DataGridComboBoxColumn Header="Order Status" />
-                    </DataGrid.Columns>
-                </DataGrid>
+            <StackPanel x:Name="st2">                
+                <TabControl Height="100">
+                    <TabItem Header="TabItem">                        
+                        <DataGrid x:Name="CustomerGrid" ItemsSource="{Binding}" AlternatingRowBackground="LightBlue" AlternationCount="5" AutoGenerateColumns="False" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="First Name" Width="80"/>
+                                <DataGridTextColumn Header="Last  Name" Width="80"/>
+                                <DataGridHyperlinkColumn Header="Email" Width="100"/>
+                                <DataGridCheckBoxColumn Header="Member?" Width="50"/>
+                                <DataGridComboBoxColumn Header="Order Status" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </TabItem>
+                    <TabItem Header="TabItem">
+                        <Grid Background="#FFE5E5E5"/>
+                    </TabItem>
+                </TabControl>
             </StackPanel>
         </Grid>
     </Grid>
