@@ -5,18 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="900" Width="1024">
     <Grid x:Name="gd1">
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
+            <RowDefinition Height="100" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="120" />
+            <RowDefinition Height="60" />
         </Grid.RowDefinitions>
         <TextBlock Canvas.Top="10" Canvas.Left="20">Hello World!</TextBlock>        
         <Grid Grid.Row="1">
-            <StackPanel x:Name="st1">
-                <Canvas>                    
-                    <Ellipse  x:Name="myEllipse" Width="80" Height="80" Canvas.Top="120" Canvas.Left="10" Fill="Silver" MouseDown="Ellipse_MouseDown">
+            <StackPanel x:Name="st1" Orientation="Horizontal">
+                <Canvas HorizontalAlignment="Left" VerticalAlignment="Top">                    
+                    <Ellipse  x:Name="myEllipse" Width="80" Height="80" Canvas.Top="10" Canvas.Left="10" Fill="Silver" MouseDown="Ellipse_MouseDown">
                         <Ellipse.Style>
                             <Style TargetType="Ellipse">
                                 <Setter Property="Stroke" Value="Transparent" />
@@ -28,8 +29,8 @@
                                 </Style.Triggers>
                             </Style>
                         </Ellipse.Style>
-                    </Ellipse>
-                    <Ellipse  x:Name="myEllipse1" Width="80" Height="80" Canvas.Top="240" Canvas.Left="10" Fill="Silver" MouseDown="Ellipse_MouseDown">
+                    </Ellipse>                    
+                    <Ellipse  x:Name="myEllipse1" Width="80" Height="80" Canvas.Top="10" Canvas.Left="90" Fill="Silver" MouseDown="Ellipse_MouseDown">
                         <Ellipse.Style>
                             <Style TargetType="Ellipse">
                                 <Setter Property="Stroke" Value="Transparent" />
@@ -43,6 +44,10 @@
                         </Ellipse.Style>
                     </Ellipse>                   
                 </Canvas>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel x:Name="outerStackPanel" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             </StackPanel>
         </Grid>
         <Grid Grid.Row="3">
